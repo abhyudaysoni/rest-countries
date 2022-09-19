@@ -2,7 +2,8 @@ import React from "react";
 import Brief from "./Brief";
 import { Container } from "./styles";
 import Detailed from "./Detailed";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import NotFound from "../../NotFound";
 
 export default function CountriesDisplayArea(props) {
   let countries = props.countries;
@@ -17,13 +18,19 @@ export default function CountriesDisplayArea(props) {
   return (
     <Container>
       <Routes>
-        <Route path="/" element={<Brief countries={countries} />} exact />
+        <Route path="/" element={<Navigate replace to="/allCountries" />} />
+        <Route
+          path="/allCountries"
+          element={<Brief countries={countries} />}
+          exact
+        />
         <Route
           path="/details/:countryCode"
           element={<Detailed countries={props.countries} />}
           exact
         />
         <Route path="/:region" element={<Brief countries={countries} />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </Container>
   );

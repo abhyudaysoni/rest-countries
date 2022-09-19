@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import NotFound from "../../NotFound";
 import CardBrief from "../../UI/CardBrief/CardBrief";
 
 const Brief = (props) => {
@@ -12,10 +13,16 @@ const Brief = (props) => {
       (element) => element.region === params.region
     );
   }
+  const regionSet = new Set();
+  props.countries.map((element) => {
+    regionSet.add(element.region);
+  });
+
   return (
     <>
-      {params?.region?.length > 0 && <h1>Region: {params.region}</h1>}
-      {filtered.length === 0 && <h1>No Data Found</h1>}
+      {filtered.length === 0 && <h1>No countries found</h1>}
+      {regionSet.has(params.region) && <h1>Region: {params.region}</h1>}
+      {!regionSet.has(params.region) && params.region && <NotFound />}
       <section className="countries">
         {filtered.map((element, index) => {
           return (
