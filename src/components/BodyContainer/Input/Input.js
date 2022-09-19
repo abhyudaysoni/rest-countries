@@ -23,7 +23,7 @@ export default function Input(props) {
           value={props.searchInput}
           type="text"
           className="search-bar-input"
-          onChange={props.changeSearch}
+          onChange={props.onSearchInput}
           placeholder="search country by name..."
         />
       </div>

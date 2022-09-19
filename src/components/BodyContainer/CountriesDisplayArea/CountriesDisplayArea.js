@@ -5,10 +5,20 @@ import Detailed from "./Detailed";
 import { Routes, Route } from "react-router-dom";
 
 export default function CountriesDisplayArea(props) {
+  let countries = props.countries;
+  if (props.searchInput) {
+    const formattedInput = props.searchInput.toLowerCase();
+    countries = props.countries.filter((element) => {
+      const countryName = element.name.common.toLowerCase();
+      return countryName.slice(0, formattedInput.length) === formattedInput;
+    });
+  }
+  console.log(countries);
+
   return (
     <Container>
       <Routes>
-        <Route path="/" element={<Brief countries={props.countries} />} exact />
+        <Route path="/" element={<Brief countries={countries} />} exact />
         <Route
           path="/details/:countryName"
           element={<Detailed countries={props.countries} />}
@@ -16,7 +26,7 @@ export default function CountriesDisplayArea(props) {
         />
         <Route
           path="/:region"
-          element={<Brief countries={props.countries} />}
+          element={<Brief countries={countries} />}
         />
       </Routes>
     </Container>
