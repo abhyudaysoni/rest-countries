@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  margin: 2rem 0 0rem 0;
+  margin: 1rem 0;
   .country-details-container {
-    margin: 2rem 0 2rem 0;
     display: grid;
     padding: 0 10% 0 10%;
     grid-template-columns: 1fr 1fr;

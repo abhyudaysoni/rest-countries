@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
-import leftArrow from "../../../assets/icons/arrow-left-line.svg";
 import { Container } from "./styles";
 
 export default function CardDetailed(props) {
@@ -11,12 +10,6 @@ export default function CardDetailed(props) {
   const classes = `card-detailed ${props.className}`;
   return (
     <Container className={classes}>
-      <Button
-        name={"Back"}
-        content={<img src={leftArrow} alt={"go-back"}></img>}
-        className={"back-btn"}
-        onClick={props.backHandler}
-      />
       <div className="country-details-container">
         <div className="flag-container-details">
           <img src={props.detailedCountry.flags.png} alt="" id="flag" />
@@ -78,12 +71,13 @@ export default function CardDetailed(props) {
                       <Button
                         key={element + index}
                         className={"border-countries"}
-                        name={element}
-                        onClick={props.displayBorderCountries.bind(
-                          null,
-                          element
-                        )}
-                      ></Button>
+                        // onClick={props.displayBorderCountries.bind(
+                        //   null,
+                        //   element
+                        // )}
+                      >
+                        {element}
+                      </Button>
                     );
                   })
                 : " Not Available"}

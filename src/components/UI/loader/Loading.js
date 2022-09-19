@@ -4,6 +4,7 @@ import loaderImg from "./loading.svg";
 
 const Container = styled.img`
   height: 100px;
+  margin: 10rem auto;
 `;
 
 const Loading = () => {
