@@ -85,7 +85,11 @@ export default function CardDetailed(props) {
                           to={`/details/${element}`}
                           className={"border-countries"}
                         >
-                          {element}
+                          {
+                            props.countries.find(
+                              (country) => country.cca3 === element
+                            ).name.common
+                          }
                         </NavLink>
                       );
                     })

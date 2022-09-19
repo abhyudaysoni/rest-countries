@@ -39,8 +39,9 @@ export const Container = styled.div`
         flex-wrap: wrap;
       }
       a {
+        padding: 0.3rem;
         box-shadow: 0px 0px 5px #bec2bf;
-        width: 50px;
+        width: fit-content;
         text-align: center;
         border-radius: 5px;
       }

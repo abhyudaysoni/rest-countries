@@ -7,7 +7,12 @@ const Detailed = (props) => {
   const country = props.countries.find(
     (element) => element.cca3 === params.countryCode
   );
-  return <CardDetailed detailedCountry={country}></CardDetailed>;
+  return (
+    <CardDetailed
+      detailedCountry={country}
+      countries={props.countries}
+    ></CardDetailed>
+  );
 };
 
 export default Detailed;
