@@ -8,7 +8,7 @@ const url = `https://restcountries.com/v3.1/all`;
 export default function BodyContainer(props) {
   return (
     <Container>
-      <Input />
+      {props.data && <Input countries={props.data} />}
       {props.data && <CountriesDisplayArea countries={props.data} />}
     </Container>
   );

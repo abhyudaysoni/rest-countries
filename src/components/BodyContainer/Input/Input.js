@@ -1,10 +1,22 @@
 import React, { useState } from "react";
-import "./Input.css";
+import ReactDOM from "react-dom";
+import { Container } from "./styles";
 import search from "../../../assets/icons/search-line.svg";
+import { NavLink } from "react-router-dom";
+import arrowDown from "../../../assets/icons/arrow-down.svg";
+import arrowUp from "../../../assets/icons/arrow-up.svg";
+import Backdrop from "../../UI/Backdrop/Backdrop";
 
 export default function Input(props) {
+  const [regionsVisibility, setRegionsVisibility] = useState(false);
+  const regionSet = new Set();
+  props.countries.map((element) => {
+    regionSet.add(element.region);
+  });
+  const regions = Array.from(regionSet);
+  regions.unshift("None");
   return (
-    <section className="input-options">
+    <Container regionsVisibility={regionsVisibility}>
       <div className="search-bar">
         <img src={search} alt="search-icon" />
         <input
@@ -15,20 +27,37 @@ export default function Input(props) {
           placeholder="search country by name..."
         />
       </div>
-      <select
+      <div
         value={props.filterOption}
         className="filter-by-region"
-        name="filter"
-        onChange={props.changeFilter}
+        onClick={() => setRegionsVisibility((prev) => !prev)}
       >
-        <option value="All">Filter by region: (None)</option>
-        <option value="Asia">Asia</option>
-        <option value="Africa">Africa</option>
-        <option value="Americas">Americas</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
-        <option value="Antarctic">Antarctic</option>
-      </select>
-    </section>
+        <p>
+          Filter by region{" "}
+          <span>
+            {regionsVisibility && <img src={arrowUp}></img>}
+            {!regionsVisibility && <img src={arrowDown}></img>}
+            {regionsVisibility &&
+              ReactDOM.createPortal(
+                <Backdrop />,
+                document.getElementById("backdrop-root")
+              )}
+          </span>
+        </p>
+
+        {regionsVisibility && (
+          <div className="regions">
+            {regions.map((element) => (
+              <NavLink
+                to={`${element === "None" ? "/" : `/${element}`}`}
+                key={element}
+              >
+                {element}
+              </NavLink>
+            ))}
+          </div>
+        )}
+      </div>
+    </Container>
   );
 }

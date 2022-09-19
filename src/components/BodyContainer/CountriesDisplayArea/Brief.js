@@ -1,11 +1,21 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import CardBrief from "../../UI/CardBrief/CardBrief";
 
 const Brief = (props) => {
+  const params = useParams();
+  let filtered;
+  if (!params.region || params.region === "None") {
+    filtered = props.countries;
+  } else {
+    filtered = props.countries.filter(
+      (element) => element.region === params.region
+    );
+  }
+
   return (
     <>
-      {props.countries.map((element, index) => {
+      {filtered.map((element, index) => {
         return (
           <CardBrief
             countryName={element.name.common}

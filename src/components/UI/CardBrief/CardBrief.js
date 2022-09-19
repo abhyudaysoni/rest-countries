@@ -5,7 +5,7 @@ import { Container } from "./styles";
 export default function CardBrief(props) {
   const classes = props.className;
   return (
-    <NavLink to={`/${props.countryName}`}>
+    <NavLink to={`/details/${props.countryName}`}>
       <Container className={classes} id={props.id} onClick={props.onClick}>
         <div className="flag-container-brief">
           <img src={props.flagSrc} alt="" />

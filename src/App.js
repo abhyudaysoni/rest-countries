@@ -9,6 +9,7 @@ const url = `https://restcountries.com/v3.1/all`;
 
 function App() {
   // const data = useFetch(url);
+  console.log(data);
   return (
     <div className="App">
       <Header />

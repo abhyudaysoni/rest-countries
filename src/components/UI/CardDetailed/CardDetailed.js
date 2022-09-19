@@ -3,9 +3,18 @@ import Button from "../Button/Button";
 import { Container } from "./styles";
 
 export default function CardDetailed(props) {
-  const getCurrencyValues = Object.values(props.detailedCountry.currencies);
-  const getNativeNames = Object.values(props.detailedCountry.name?.nativeName);
-  const getLanguages = Object.values(props.detailedCountry.languages);
+  let getCurrencyValues;
+  let getNativeNames;
+  let getLanguages;
+  if (props.detailedCountry.currencies) {
+    getCurrencyValues = Object.values(props?.detailedCountry?.currencies);
+  }
+  if (props.detailedCountry.name.nativeName) {
+    Object.values(props?.detailedCountry?.name?.nativeName);
+  }
+  if (props.detailedCountry.languages) {
+    getLanguages = Object.values(props?.detailedCountry?.languages);
+  }
 
   const classes = `card-detailed ${props.className}`;
   return (
@@ -57,9 +66,11 @@ export default function CardDetailed(props) {
             </p>
             <p>
               Languages:{" "}
-              {getLanguages.map((element, index) => (
-                <span key={element + index}>{element}, </span>
-              ))}
+              {getLanguages &&
+                getLanguages.map((element, index) => (
+                  <span key={element + index}>{element}, </span>
+                ))}
+              {!getLanguages && <span>Not Available</span>}
             </p>
           </div>
           <div className="border-countries">

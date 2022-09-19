@@ -8,11 +8,15 @@ export default function CountriesDisplayArea(props) {
   return (
     <Container>
       <Routes>
-        <Route path="/" element={<Brief countries={props.countries} />} />
+        <Route path="/" element={<Brief countries={props.countries} />} exact />
         <Route
-          path="/:countryName"
+          path="/details/:countryName"
           element={<Detailed countries={props.countries} />}
           exact
+        />
+        <Route
+          path="/:region"
+          element={<Brief countries={props.countries} />}
         />
       </Routes>
     </Container>
