@@ -5,7 +5,7 @@ import CardDetailed from "../../UI/CardDetailed/CardDetailed";
 const Detailed = (props) => {
   const params = useParams();
   const country = props.countries.find(
-    (element) => element.name.common === params.countryName
+    (element) => element.cca3 === params.countryCode
   );
   return <CardDetailed detailedCountry={country}></CardDetailed>;
 };

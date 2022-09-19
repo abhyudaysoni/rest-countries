@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { Container } from "./styles";
 import search from "../../../assets/icons/search-line.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import arrowDown from "../../../assets/icons/arrow-down.svg";
 import arrowUp from "../../../assets/icons/arrow-up.svg";
 import Backdrop from "../../UI/Backdrop/Backdrop";
@@ -15,6 +15,7 @@ export default function Input(props) {
   });
   const regions = Array.from(regionSet);
   regions.unshift("None");
+  const params = useParams();
   return (
     <Container regionsVisibility={regionsVisibility}>
       <div className="search-bar">
@@ -33,7 +34,7 @@ export default function Input(props) {
         onClick={() => setRegionsVisibility((prev) => !prev)}
       >
         <p>
-          Filter by region{" "}
+          Filter by Region{" "}
           <span>
             {regionsVisibility && <img src={arrowUp}></img>}
             {!regionsVisibility && <img src={arrowDown}></img>}

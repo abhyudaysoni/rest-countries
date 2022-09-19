@@ -3,11 +3,13 @@ import Input from "./Input/Input";
 import CountriesDisplayArea from "./CountriesDisplayArea/CountriesDisplayArea";
 import { Container } from "./styles";
 
-const url = `https://restcountries.com/v3.1/all`;
-
 export default function BodyContainer(props) {
-  const [searchInput, setSearchInput] = useState();
+  const [searchInput, setSearchInput] = useState("");
   const searchInputHandler = (e) => {
+    if (e.target.value[0] === ".") {
+      setSearchInput("");
+      return;
+    }
     setSearchInput(e.target.value);
   };
 

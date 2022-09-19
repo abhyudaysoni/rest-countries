@@ -13,4 +13,16 @@ export const Container = styled.header`
     text-decoration: none;
     color: black;
   }
+  button {
+    min-height: 50px;
+    width: 150px;
+    min-width: 110px;
+    padding: none;
+    height: fit-content;
+  }
+  @media (max-width: 650px) {
+    padding: 1rem;
+    height: 8vh;
+    font-size: 0.6rem;
+  }
 `;

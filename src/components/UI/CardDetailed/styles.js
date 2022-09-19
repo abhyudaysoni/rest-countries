@@ -31,9 +31,20 @@ export const Container = styled.div`
       margin: 0.5rem 0;
     }
   }
-  .border-countries p {
-    font-weight: 700;
-    margin: 0.5rem 0;
+  .border-countries {
+    p {
+      font-weight: 700;
+      .borders {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      a {
+        box-shadow: 0px 0px 5px #bec2bf;
+        width: 50px;
+        text-align: center;
+        border-radius: 5px;
+      }
+    }
   }
   .back-btn {
     margin: 0;

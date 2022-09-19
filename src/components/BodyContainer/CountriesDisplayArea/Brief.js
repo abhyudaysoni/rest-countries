@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import CardBrief from "../../UI/CardBrief/CardBrief";
 
 const Brief = (props) => {
@@ -12,31 +12,30 @@ const Brief = (props) => {
       (element) => element.region === params.region
     );
   }
-
   return (
     <>
-      {filtered.map((element, index) => {
-        return (
-          <CardBrief
-            countryName={element.name.common}
-            key={index + element.name.common}
-            // onClick={displayCountryDetails.bind(
-            //   null,
-            //   element.name.common,
-            //   index
-            // )}
-            className={"country-card-brief"}
-            flagSrc={element.flags.svg ? element.flags.svg : "Not Available"}
-            countryPopulation={
-              element.population ? element.population : "Not Available"
-            }
-            coutryRegion={element.region ? element.region : "Not Available"}
-            coutryCapital={
-              element.capital ? element.capital[0] : "Not Available"
-            }
-          ></CardBrief>
-        );
-      })}
+      {params?.region?.length > 0 && <h1>Region: {params.region}</h1>}
+      {filtered.length === 0 && <h1>No Data Found</h1>}
+      <section className="countries">
+        {filtered.map((element, index) => {
+          return (
+            <CardBrief
+              countryName={element.name.common}
+              key={index + element.name.common}
+              countryCode={element.cca3}
+              className={"country-card-brief"}
+              flagSrc={element.flags.svg ? element.flags.svg : "Not Available"}
+              countryPopulation={
+                element.population ? element.population : "Not Available"
+              }
+              coutryRegion={element.region ? element.region : "Not Available"}
+              coutryCapital={
+                element.capital ? element.capital[0] : "Not Available"
+              }
+            ></CardBrief>
+          );
+        })}
+      </section>
     </>
   );
 };

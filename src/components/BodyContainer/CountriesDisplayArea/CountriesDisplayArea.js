@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Brief from "./Brief";
 import { Container } from "./styles";
 import Detailed from "./Detailed";
@@ -13,21 +13,17 @@ export default function CountriesDisplayArea(props) {
       return countryName.slice(0, formattedInput.length) === formattedInput;
     });
   }
-  console.log(countries);
 
   return (
     <Container>
       <Routes>
         <Route path="/" element={<Brief countries={countries} />} exact />
         <Route
-          path="/details/:countryName"
+          path="/details/:countryCode"
           element={<Detailed countries={props.countries} />}
           exact
         />
-        <Route
-          path="/:region"
-          element={<Brief countries={countries} />}
-        />
+        <Route path="/:region" element={<Brief countries={countries} />} />
       </Routes>
     </Container>
   );

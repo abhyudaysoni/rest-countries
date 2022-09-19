@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Button from "../Button/Button";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { Container } from "./styles";
 
 export default function CardDetailed(props) {
@@ -76,22 +76,21 @@ export default function CardDetailed(props) {
           <div className="border-countries">
             <p>
               Borders:
-              {props.detailedCountry?.borders
-                ? props.detailedCountry.borders.map((element, index) => {
-                    return (
-                      <Button
-                        key={element + index}
-                        className={"border-countries"}
-                        // onClick={props.displayBorderCountries.bind(
-                        //   null,
-                        //   element
-                        // )}
-                      >
-                        {element}
-                      </Button>
-                    );
-                  })
-                : " Not Available"}
+              <span className="borders">
+                {props.detailedCountry?.borders
+                  ? props.detailedCountry.borders.map((element, index) => {
+                      return (
+                        <NavLink
+                          key={element + index}
+                          to={`/details/${element}`}
+                          className={"border-countries"}
+                        >
+                          {element}
+                        </NavLink>
+                      );
+                    })
+                  : " Not Available"}
+              </span>
             </p>
           </div>
         </div>
