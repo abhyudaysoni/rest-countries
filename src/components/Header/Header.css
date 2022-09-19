@@ -1,0 +1,43 @@
+header {
+  width: 100%;
+  display: flex;
+  min-height: 100px;
+  max-height: 150px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5rem 1rem 5rem;
+  box-shadow: 1px 1px 5px rgb(161, 160, 160);
+}
+.dark header {
+  box-shadow: 1px 1px 5px rgb(26, 26, 26);
+}
+header a {
+  text-decoration: none;
+  color: black;
+}
+header button {
+  min-height: 50px;
+  width: 150px;
+  min-width: 110px;
+  padding: none;
+  height: fit-content;
+}
+header .btn-content {
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+.dark header h1 {
+  color: hsl(0, 0%, 98%);
+}
+.dark header button {
+  background-color: hsl(0, 0%, 98%);
+  color: black;
+}
+
+@media (max-width: 650px) {
+  header {
+    padding: 1rem;
+    height: 8vh;
+    font-size: 0.6rem;
+  }
+}
