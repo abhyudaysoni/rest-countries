@@ -21,8 +21,10 @@ const Brief = (props) => {
   return (
     <>
       {filtered.length === 0 && <h1>No countries found</h1>}
+      {regionSet.has(params.region) && filtered.length === 0 && (
+        <h1>No countries found</h1>
+      )}
       {regionSet.has(params.region) && <h1>Region: {params.region}</h1>}
-      {!regionSet.has(params.region) && params.region && <NotFound />}
       <section className="countries">
         {filtered.map((element, index) => {
           return (
