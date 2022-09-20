@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Input from "./Input/Input";
 import CountriesDisplayArea from "./CountriesDisplayArea/CountriesDisplayArea";
 import { Container } from "./styles";
 
@@ -15,11 +14,11 @@ export default function BodyContainer(props) {
 
   return (
     <Container>
-      <Input onSearchInput={searchInputHandler} />
       {props.data && (
         <CountriesDisplayArea
           countries={props.data}
           searchInput={searchInput}
+          onSearchInput={searchInputHandler}
         />
       )}
     </Container>

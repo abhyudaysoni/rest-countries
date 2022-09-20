@@ -40,17 +40,17 @@ export const Container = styled.section`
   }
   .regions {
     a {
-      width: 100%;
-      padding: 0.5rem;
+      width: 95%;
+      margin: 0.5rem;
+      padding: 0.3rem;
     }
     width: 100%;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     z-index: 10;
     position: relative;
-    box-shadow: 0px 5px 5px #bfbfbf;
     border-radius: 0 0 10px 10px;
+    cursor: default;
   }
 
   @media (max-width: 650px) {

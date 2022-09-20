@@ -19,13 +19,13 @@ export default function CardDetailed(props) {
   const classes = `card-detailed ${props.className}`;
   return (
     <Container className={classes}>
-      <div className="country-details-container">
-        <div className="flag-container-details">
+      <section className="country-details-container">
+        <section className="flag-container-details">
           <img src={props.detailedCountry.flags.png} alt="" id="flag" />
-        </div>
-        <div className="country-details">
+        </section>
+        <section className="country-details">
           <h1 className="name">{props.detailedCountry.name.common}</h1>
-          <div className="details">
+          <section className="details">
             <p>
               Native Name:{" "}
               <span>
@@ -88,8 +88,8 @@ export default function CardDetailed(props) {
                 {!getLanguages && <span>Not Available</span>}
               </span>
             </p>
-          </div>
-          <div className="border-countries">
+          </section>
+          <section className="border-countries">
             <p>
               Borders:
               <span className="borders">
@@ -101,20 +101,22 @@ export default function CardDetailed(props) {
                           to={`/details/${element}`}
                           className={"border-countries"}
                         >
-                          {
-                            props.countries.find(
-                              (country) => country.cca3 === element
-                            ).name.common
-                          }
+                          <span>
+                            {
+                              props.countries.find(
+                                (country) => country.cca3 === element
+                              ).name.common
+                            }
+                          </span>
                         </NavLink>
                       );
                     })
                   : " Not Available"}
               </span>
             </p>
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </section>
     </Container>
   );
 }

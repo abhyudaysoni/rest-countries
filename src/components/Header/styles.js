@@ -8,7 +8,6 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1rem 5rem;
-  box-shadow: 1px 1px 5px rgb(161, 160, 160);
   button {
     min-height: 50px;
     max-height: 50px;

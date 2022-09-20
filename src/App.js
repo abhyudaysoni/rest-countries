@@ -7,7 +7,7 @@ import Loading from "./components/UI/loader/Loading";
 
 // const url = `https://restcountries.com/v3.1/all`;
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column;

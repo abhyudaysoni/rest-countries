@@ -39,7 +39,6 @@ export default function Input(props) {
               )}
           </span>
         </p>
-
         {regionsVisibility && (
           <div className="regions">
             {regions.map((element) => (

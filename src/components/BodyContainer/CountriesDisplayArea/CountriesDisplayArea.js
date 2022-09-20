@@ -21,7 +21,14 @@ export default function CountriesDisplayArea(props) {
         <Route path="/" element={<Navigate replace to="/allCountries" />} />
         <Route
           path="/allCountries"
-          element={<Brief countries={countries} />}
+          element={
+            <Brief
+              countries={countries}
+              isBrief={props.isBrief}
+              onBriefVisibility={props.onBriefVisibility}
+              onSearchInput={props.onSearchInput}
+            />
+          }
           exact
         />
         <Route

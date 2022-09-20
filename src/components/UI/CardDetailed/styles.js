@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.section`
   width: 100%;
-  margin: 1rem 0;
   .country-details-container {
     display: grid;
     padding: 0 10% 0 10%;
@@ -12,8 +11,9 @@ export const Container = styled.div`
   #flag {
     height: 300px;
     width: 500px;
-    box-shadow: 1px 1px 5px rgb(202, 200, 200);
     border-radius: 10px;
+    box-shadow: 0px 0px 5px #131d2e;
+    margin-top: 3rem;
   }
   .country-details {
     display: flex;
@@ -21,6 +21,9 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
+    h1 {
+      font-size: 20px;
+    }
   }
   .details {
     display: grid;
@@ -45,11 +48,15 @@ export const Container = styled.div`
         font-weight: 700;
       }
       a {
-        padding: 0.3rem;
-        box-shadow: 0px 0px 5px #bec2bf;
         width: fit-content;
         text-align: center;
         border-radius: 5px;
+        span {
+          width: fit-content;
+          padding: 0.5rem;
+          box-shadow: 1px 1px 3px #131d2e;
+          border-radius: 5px;
+        }
       }
     }
   }
@@ -77,6 +84,12 @@ export const Container = styled.div`
     #flag {
       width: 100%;
       height: 100%;
+      margin-top: 0;
+    }
+  }
+  @media (max-width: 1200px) {
+    #flag {
+      margin-top: 0;
     }
   }
 `;

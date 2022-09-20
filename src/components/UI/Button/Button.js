@@ -12,6 +12,7 @@ const Container = styled.button`
   border-radius: 5px;
   width: fit-content;
   padding: 1rem;
+  color: black;
 `;
 
 export default function Button(props) {

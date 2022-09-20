@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
+export const Container = styled.div`
   max-height: 700px;
   min-height: 400px;
   width: 300px;
