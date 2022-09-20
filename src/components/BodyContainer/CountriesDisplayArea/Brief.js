@@ -21,7 +21,7 @@ const Brief = (props) => {
 
   return (
     <>
-      <Input onSearchInput={props.onSearchInput} />
+      <Input onSearchInput={props.onSearchInput} region={params.region} />
       {filtered.length === 0 && <h1>No countries found</h1>}
       {regionSet.has(params.region) && filtered.length === 0 && (
         <h1>No countries found</h1>
@@ -43,7 +43,6 @@ const Brief = (props) => {
               coutryCapital={
                 element.capital ? element.capital[0] : "Not Available"
               }
-              onBriefVisibility={props.onBriefVisibility}
             ></CardBrief>
           );
         })}

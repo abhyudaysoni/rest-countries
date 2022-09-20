@@ -25,7 +25,6 @@ export default function CountriesDisplayArea(props) {
             <Brief
               countries={countries}
               isBrief={props.isBrief}
-              onBriefVisibility={props.onBriefVisibility}
               onSearchInput={props.onSearchInput}
             />
           }
@@ -36,7 +35,12 @@ export default function CountriesDisplayArea(props) {
           element={<Detailed countries={props.countries} />}
           exact
         />
-        <Route path="/:region" element={<Brief countries={countries} />} />
+        <Route
+          path="/:region"
+          element={
+            <Brief countries={countries} onSearchInput={props.onSearchInput} />
+          }
+        />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Container>

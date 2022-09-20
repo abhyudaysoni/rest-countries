@@ -28,7 +28,7 @@ export default function Input(props) {
         onClick={() => setRegionsVisibility((prev) => !prev)}
       >
         <p>
-          Filter by Region{" "}
+          {props.region || "Filter by Region"}
           <span>
             {regionsVisibility && <img src={arrowUp} alt="up"></img>}
             {!regionsVisibility && <img src={arrowDown} alt="down"></img>}
