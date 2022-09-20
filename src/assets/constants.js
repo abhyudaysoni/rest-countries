@@ -6,5 +6,4 @@ export const regions = [
   "Europe",
   "Oceania",
   "Antarctic",
-  "",
 ];
