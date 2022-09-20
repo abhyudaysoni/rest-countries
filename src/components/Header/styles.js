@@ -8,6 +8,9 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1rem 5rem;
+  a {
+    font-size: 30px;
+  }
   button {
     min-height: 50px;
     max-height: 50px;
@@ -21,5 +24,8 @@ export const Container = styled.header`
     padding: 1rem;
     height: 8vh;
     font-size: 0.6rem;
+    a {
+      font-size: 20px;
+    }
   }
 `;
