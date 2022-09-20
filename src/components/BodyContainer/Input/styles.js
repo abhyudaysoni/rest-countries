@@ -14,7 +14,6 @@ export const Container = styled.section`
     max-width: 700px;
     border-radius: 5px;
     border: none;
-    box-shadow: 0px 1px 5px rgb(128, 127, 127);
     img {
       margin: 1rem;
     }
@@ -31,11 +30,8 @@ export const Container = styled.section`
     border: none;
     width: 100%;
     height: 50px;
-    background: none;
     border-radius: 5px;
     z-index: 10;
-    background: white;
-    box-shadow: 0px 1px 5px rgb(128, 127, 127);
     p {
       margin: 0.8rem;
       display: flex;
@@ -44,17 +40,11 @@ export const Container = styled.section`
   }
   .regions {
     a {
-      text-decoration: none;
-      color: black;
       width: 100%;
       padding: 0.5rem;
     }
-    a:hover {
-      text-shadow: 0px 0px 1px black;
-    }
     width: 100%;
     padding: 1rem;
-    background: white;
     display: flex;
     flex-direction: column;
     z-index: 10;

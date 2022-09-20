@@ -5,7 +5,6 @@ export const Container = styled.section`
   min-height: 400px;
   width: 300px;
   font-size: 1.5rem;
-  box-shadow: 1px 1px 5px rgb(163, 163, 163);
   border-radius: 20px;
   overflow: hidden;
   display: flex;
@@ -26,7 +25,6 @@ export const Container = styled.section`
     img {
       max-height: 200px;
       width: 100%;
-      box-shadow: 1px 1px 5px rgb(163, 163, 163);
       border-radius: 20px;
     }
   }

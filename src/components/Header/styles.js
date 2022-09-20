@@ -9,16 +9,14 @@ export const Container = styled.header`
   justify-content: space-between;
   padding: 1rem 5rem;
   box-shadow: 1px 1px 5px rgb(161, 160, 160);
-  a {
-    text-decoration: none;
-    color: black;
-  }
   button {
     min-height: 50px;
+    max-height: 50px;
     width: 150px;
     min-width: 110px;
     padding: none;
     height: fit-content;
+    background: ${(props) => (props.isLight ? "white" : "white")};
   }
   @media (max-width: 650px) {
     padding: 1rem;

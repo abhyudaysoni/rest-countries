@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   a {
-    text-decoration: none;
-    color: black;
     margin: 1rem;
   }
   h1 {

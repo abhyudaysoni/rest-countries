@@ -11,7 +11,7 @@ import { regions } from "../../../assets/constants";
 export default function Input(props) {
   const [regionsVisibility, setRegionsVisibility] = useState(false);
   return (
-    <Container regionsVisibility={regionsVisibility}>
+    <Container regionsVisibility={regionsVisibility} isLight={props.isLight}>
       <div className="search-bar">
         <img src={search} alt="search-icon" />
         <input
