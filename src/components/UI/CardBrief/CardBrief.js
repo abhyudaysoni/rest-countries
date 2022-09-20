@@ -11,7 +11,7 @@ export default function CardBrief(props) {
         id={props.id}
       >
         <div className="flag-container-brief">
-          <img src={props.flagSrc} alt="" />
+          <img src={props.flagSrc} alt="flag" />
         </div>
         <div className="country-brief-details">
           <h3>{props.countryName}</h3>
