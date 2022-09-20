@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import NotFound from "../../NotFound";
 import CardBrief from "../../UI/CardBrief/CardBrief";
 
 const Brief = (props) => {
@@ -16,6 +15,7 @@ const Brief = (props) => {
   const regionSet = new Set();
   props.countries.map((element) => {
     regionSet.add(element.region);
+    return null;
   });
 
   return (

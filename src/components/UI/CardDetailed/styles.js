@@ -27,16 +27,22 @@ export const Container = styled.div`
     grid-template-rows: repeat(auto-fill, 1fr);
     margin: 1rem 0 1rem 0;
     p {
-      font-weight: 700;
+      font-weight: 900;
       margin: 0.5rem 0;
+    }
+    span {
+      font-weight: 400;
     }
   }
   .border-countries {
     p {
-      font-weight: 700;
+      font-weight: 900;
       .borders {
         display: flex;
         flex-wrap: wrap;
+      }
+      span {
+        font-weight: 700;
       }
       a {
         padding: 0.3rem;

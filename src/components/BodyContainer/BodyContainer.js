@@ -15,9 +15,7 @@ export default function BodyContainer(props) {
 
   return (
     <Container>
-      {props.data && (
-        <Input countries={props.data} onSearchInput={searchInputHandler} />
-      )}
+      <Input onSearchInput={searchInputHandler} />
       {props.data && (
         <CountriesDisplayArea
           countries={props.data}

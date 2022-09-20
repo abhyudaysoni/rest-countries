@@ -10,7 +10,7 @@ export default function CardDetailed(props) {
     getCurrencyValues = Object.values(props?.detailedCountry?.currencies);
   }
   if (props.detailedCountry.name.nativeName) {
-    Object.values(props?.detailedCountry?.name?.nativeName);
+    getNativeNames = Object.values(props?.detailedCountry?.name?.nativeName);
   }
   if (props.detailedCountry.languages) {
     getLanguages = Object.values(props?.detailedCountry?.languages);
@@ -28,49 +28,65 @@ export default function CardDetailed(props) {
           <div className="details">
             <p>
               Native Name:{" "}
-              {getNativeNames
-                ? getNativeNames.map((element, index) => (
-                    <span key={element + index}>{element.common}, </span>
-                  ))
-                : "Not Available"}
+              <span>
+                {getNativeNames
+                  ? getNativeNames.map((element, index) => (
+                      <span key={element + index}>{element.common}, </span>
+                    ))
+                  : "Not Available"}
+              </span>
             </p>
             <p>
               Capital:{" "}
-              {props.detailedCountry.capital
-                ? props.detailedCountry.capital
-                : "Not Available"}
+              <span>
+                {props.detailedCountry.capital
+                  ? props.detailedCountry.capital
+                  : "Not Available"}
+              </span>
             </p>
-            <p>Region: {props.detailedCountry.region}</p>
+            <p>
+              Region: <span>{props.detailedCountry.region}</span>
+            </p>
             <p>
               Sub-Region:{" "}
-              {props.detailedCountry?.subregion
-                ? props.detailedCountry?.subregion
-                : "Not Available"}
+              <span>
+                {props.detailedCountry?.subregion
+                  ? props.detailedCountry?.subregion
+                  : "Not Available"}
+              </span>
             </p>
             <p>
               Population:{" "}
-              {props.detailedCountry.population
-                ? `${props.detailedCountry.population}`
-                : "Not Available"}
+              <span>
+                {props.detailedCountry.population
+                  ? `${props.detailedCountry.population}`
+                  : "Not Available"}
+              </span>
             </p>
-            <p>Top Level Domain: {props.detailedCountry.tld[0]}</p>
+            <p>
+              Top Level Domain: <span>{props.detailedCountry.tld[0]}</span>
+            </p>
             <p>
               Currencies:{" "}
-              {getCurrencyValues
-                ? getCurrencyValues.map((element, index) => (
-                    <span key={element + index}>
-                      {element.name} ({element.symbol}),{" "}
-                    </span>
-                  ))
-                : " Not Available"}
+              <span>
+                {getCurrencyValues
+                  ? getCurrencyValues.map((element, index) => (
+                      <span key={element + index}>
+                        {element.name} ({element.symbol}),{" "}
+                      </span>
+                    ))
+                  : " Not Available"}
+              </span>
             </p>
             <p>
               Languages:{" "}
-              {getLanguages &&
-                getLanguages.map((element, index) => (
-                  <span key={element + index}>{element}, </span>
-                ))}
-              {!getLanguages && <span>Not Available</span>}
+              <span>
+                {getLanguages &&
+                  getLanguages.map((element, index) => (
+                    <span key={element + index}>{element}, </span>
+                  ))}
+                {!getLanguages && <span>Not Available</span>}
+              </span>
             </p>
           </div>
           <div className="border-countries">
