@@ -12,14 +12,33 @@ Users should be able to:
 - See all countries from the API on the homepage
 - Search for a country using an `input` field
 - Filter countries by region
-<!-- - Click on a country to see more detailed information on a separate page -->
-<!-- - Click through to the border countries on the detail page -->
-<!-- - Toggle the color scheme between light and dark mode *(optional)* -->
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- Toggle the color scheme between light and dark mode
 
-### Links
+## Steps to run the app on a browser: 
 
-- Solution URL: [https://github.com/abhyudaysoni/rest-countries-api-with-color-theme-switcher-master](https://your-solution-url.com)
-- Live Site URL: [http://rest-countries-api-with-color-theme-switcher-master-tan.vercel.app/](https://your-live-site-url.com)
+1. Install node [download here](https://nodejs.org/en/download/)
+
+2. Download the project package
+3. Open the folder in an Editor (preferably VS Code) [download here](https://code.visualstudio.com/download)
+4. Install node modules with command <p><i>npm install</i></p>
+5. Open [package.json](./package.json), check for the dependencies object
+6. Install dependencies with command <p><i>npm install {packegeName}</i></p>
+
+7. To run the app type <p><i>npm start</i></p>
+
+## Dependencies: 
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-responsive": "^9.0.0",
+    "react-router-dom": "^6.4.0",
+    "react-scripts": "5.0.1",
+    "styled-components": "^5.3.5",
+    "web-vitals": "^2.1.4"
 
 ## My process
 
@@ -33,18 +52,18 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 
 
-
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+1. In this challenge I worked with data fetching from an API(Application Programming Interface)
+2. Basic React Routing
+3. Styled Components
+4. Conditional rendering
+5. React Hooks
 
+### Links
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- Solution URL: [https://github.com/abhyudaysoni/rest-countries](https://github.com/abhyudaysoni/rest-countries)
+- Live Site URL: [https://rest-countries-two-beige.vercel.app/](https://rest-countries-two-beige.vercel.app/)
 
 
 ## Author
