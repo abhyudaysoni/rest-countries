@@ -28,8 +28,4 @@ export const Container = styled.div`
       border-radius: 20px;
     }
   }
-
-  @media (max-width: 500px) {
-    width: 100%;
-  }
 `;
