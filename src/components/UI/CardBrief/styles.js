@@ -5,7 +5,7 @@ export const Container = styled.div`
   min-height: 400px;
   width: 300px;
   font-size: 1.5rem;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ export const Container = styled.div`
     img {
       max-height: 200px;
       width: 100%;
-      border-radius: 20px;
+      border-radius: 10px;
     }
   }
 `;
