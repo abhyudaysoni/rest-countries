@@ -29,6 +29,6 @@ export const GlobalStyle = createGlobalStyle`
   }
   input{
     background: ${(props) => (props.isLight ? "white" : "hsl(207, 26%, 17%)")};
+    color: ${(props) => (props.isLight ? "black" : "white")};
   }
-
 `;
