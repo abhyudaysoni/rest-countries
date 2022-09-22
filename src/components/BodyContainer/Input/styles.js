@@ -23,6 +23,7 @@ export const Container = styled.section`
       border: none;
       outline: none;
       font-size: 1rem;
+      border-radius: 5px;
     }
   }
   .filter-by-region {

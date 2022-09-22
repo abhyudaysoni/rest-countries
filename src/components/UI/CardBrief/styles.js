@@ -5,12 +5,12 @@ export const Container = styled.div`
   min-height: 400px;
   width: 300px;
   font-size: 1.5rem;
-  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 2rem;
+  border-radius: 5px;
   height: 100%;
 
   .country-brief-details {
@@ -25,7 +25,7 @@ export const Container = styled.div`
     img {
       max-height: 200px;
       width: 100%;
-      border-radius: 10px;
+      border-radius: 5px 5px 0 0;
     }
   }
 `;

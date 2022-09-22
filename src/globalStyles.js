@@ -7,6 +7,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
   }
+  header{
+    box-shadow: 0px 0px 5px  ${(props) =>
+      props.isLight ? "#999999" : "#131d2e"};
+  }
   button {
     cursor: pointer;
   }
@@ -30,5 +34,11 @@ export const GlobalStyle = createGlobalStyle`
   input{
     background: ${(props) => (props.isLight ? "white" : "hsl(207, 26%, 17%)")};
     color: ${(props) => (props.isLight ? "black" : "white")};
+  }
+  .countries{
+    img{
+      box-shadow: 0px 0px 5px  ${(props) =>
+        props.isLight ? "#999999" : "#131d2e"};
+    }
   }
 `;

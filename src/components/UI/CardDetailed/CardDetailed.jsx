@@ -45,13 +45,18 @@ export default function CardDetailed(props) {
               </span>
             </p>
             <p>
-              Region: <span>{props.detailedCountry.region}</span>
+              Region:{" "}
+              <span>
+                {props.detailedCountry.region
+                  ? props.detailedCountry.region
+                  : "Not Available"}
+              </span>
             </p>
             <p>
               Sub-Region:{" "}
               <span>
-                {props.detailedCountry?.subregion
-                  ? props.detailedCountry?.subregion
+                {props.detailedCountry.subregion
+                  ? props.detailedCountry.subregion
                   : "Not Available"}
               </span>
             </p>
@@ -64,7 +69,12 @@ export default function CardDetailed(props) {
               </span>
             </p>
             <p>
-              Top Level Domain: <span>{props.detailedCountry.tld[0]}</span>
+              Top Level Domain:{" "}
+              <span>
+                {props.detailedCountry.tld
+                  ? `${props.detailedCountry.tld}`
+                  : "Not Available"}
+              </span>
             </p>
             <p>
               Currencies:{" "}
