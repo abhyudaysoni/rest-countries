@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { GlobalStyle } from "./globalStyles.js";
 
 const Root = () => {
-  const [isLight, setIsLight] = useState(true);
+  const [isLight, setIsLight] = useState(false);
   const themeHandler = () => {
     setIsLight((prev) => !prev);
   };
