@@ -61,10 +61,42 @@ export default function CardDetailed(props) {
               </span>
             </p>
             <p>
+              Continent:{" "}
+              <span>
+                {props.detailedCountry.continents[0]
+                  ? props.detailedCountry.continents[0]
+                  : "Not Available"}
+              </span>
+            </p>
+            <p>
               Population:{" "}
               <span>
                 {props.detailedCountry.population
                   ? `${props.detailedCountry.population}`
+                  : "Not Available"}
+              </span>
+            </p>
+            <p>
+              Area:{" "}
+              <span>
+                {props.detailedCountry.area
+                  ? `${props.detailedCountry.area} km^2`
+                  : "Not Available"}
+              </span>
+            </p>
+            <p>
+              License plate:{" "}
+              <span>
+                {props.detailedCountry.car.signs[0]
+                  ? `${props.detailedCountry.car.signs[0]}`
+                  : "Not Available"}
+              </span>
+            </p>
+            <p>
+              Country Code:{" "}
+              <span>
+                {props.detailedCountry.idd.root
+                  ? `${props.detailedCountry.idd.root}`
                   : "Not Available"}
               </span>
             </p>
@@ -75,6 +107,10 @@ export default function CardDetailed(props) {
                   ? `${props.detailedCountry.tld}`
                   : "Not Available"}
               </span>
+            </p>
+            <p>
+              UN Membership:{" "}
+              <span>{props.detailedCountry.unMember ? "Yes" : "No"}</span>
             </p>
             <p>
               Currencies:{" "}
@@ -93,6 +129,16 @@ export default function CardDetailed(props) {
               <span>
                 {getLanguages &&
                   getLanguages.map((element, index) => (
+                    <span key={element + index}>{element}, </span>
+                  ))}
+                {!getLanguages && <span>Not Available</span>}
+              </span>
+            </p>
+            <p>
+              Timezones:{" "}
+              <span>
+                {props.detailedCountry.timezones &&
+                  props.detailedCountry.timezones.map((element, index) => (
                     <span key={element + index}>{element}, </span>
                   ))}
                 {!getLanguages && <span>Not Available</span>}
