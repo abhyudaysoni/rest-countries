@@ -7,18 +7,26 @@ import arrowDown from "../../../assets/icons/arrow-down.svg";
 import arrowUp from "../../../assets/icons/arrow-up.svg";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 import { regions } from "../../../assets/constants";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { changeSearch } from "../../../store/search-slice";
 
 export default function Input(props) {
+  const searchInput = useSelector((state) => state.search.searchInput);
+  const dispatch = useDispatch();
+  const searchInputHandler = (e) => {
+    dispatch(changeSearch(e.target.value));
+  };
   const [regionsVisibility, setRegionsVisibility] = useState(false);
   return (
     <Container regionsVisibility={regionsVisibility} isLight={props.isLight}>
       <div className="search-bar">
         <img src={search} alt="search-icon" />
         <input
-          value={props.searchInput}
+          value={searchInput}
           type="text"
           className="search-bar-input"
-          onChange={props.onSearchInput}
+          onChange={searchInputHandler}
           placeholder="search country by name..."
         />
       </div>

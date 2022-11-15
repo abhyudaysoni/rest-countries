@@ -21,7 +21,7 @@ const Brief = (props) => {
 
   return (
     <>
-      <Input onSearchInput={props.onSearchInput} region={params.region} />
+      <Input region={params.region} />
       {filtered.length === 0 && <h1>No countries found</h1>}
       {regionSet.has(params.region) && filtered.length === 0 && (
         <h1>No countries found</h1>
